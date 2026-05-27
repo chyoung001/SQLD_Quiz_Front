@@ -3,7 +3,9 @@
 SQLD(SQL 개발자) 자격증 시험 대비 플랫폼의 프론트엔드.
 React 19 SPA로, 챕터별 문제 풀이·모의고사·AI 변형 문제 풀이 UI를 제공합니다.
 
-> 백엔드 저장소: [→ backend repo 링크]
+🌐 **배포 주소**: [https://sqld-quiz-front.vercel.app](https://sqld-quiz-front.vercel.app)
+
+> 백엔드 저장소: [chyoung001/SQLD_Quiz_back](https://github.com/chyoung001/SQLD_Quiz_back)
 
 ---
 
@@ -145,13 +147,12 @@ npm run dev
   "rewrites": [
     {
       "source": "/api/:path*",
-      "destination": "https://your-backend.up.railway.app/api/:path*"
+      "destination": "https://sqldquizback-production.up.railway.app/api/:path*"
     }
   ]
 }
 ```
 
-> `destination` URL은 배포한 백엔드 Railway 도메인으로 변경하세요.
 > 이 설정이 없으면 프로덕션에서 `/api/*` 요청이 Vercel 자체로 404 응답합니다.
 
 ### 2. Vercel 배포
@@ -170,7 +171,7 @@ npm run dev
 Railway 백엔드 환경변수에서 `CORS_ORIGINS`에 Vercel 도메인 추가:
 
 ```
-CORS_ORIGINS=https://your-app.vercel.app
+CORS_ORIGINS=https://sqld-quiz-front.vercel.app
 ```
 
 > 참고: rewrites를 사용하면 백엔드 입장에서 모든 요청이 Vercel 서버에서 오는 것처럼 보이므로
